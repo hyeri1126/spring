@@ -1,6 +1,7 @@
 package hello.core.member;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
@@ -20,4 +21,6 @@ public class MemberServiceTest {
         Assertions.assertThat(member).isEqualTo(member1);
 
     }
+
+
 }

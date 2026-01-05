@@ -2,7 +2,6 @@ package hello.jdbc.service;
 
 import hello.jdbc.domain.Member;
 import hello.jdbc.repository.MemberRepositoryV1;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,7 +13,6 @@ import java.sql.SQLException;
 import static hello.jdbc.connection.ConnectionConst.*;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class MemberService1Test {
 
@@ -23,13 +21,13 @@ class MemberService1Test {
     public static final String MEMBER_EX = "ex";
 
     private MemberRepositoryV1 memberRepository;
-    private MemberService1 memberService;
+    private MemberServiceV1 memberService;
 
     @BeforeEach
     void before(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource(URL, USERNAME, PASSWORD);
         memberRepository = new MemberRepositoryV1(dataSource);
-        memberService = new MemberService1(memberRepository);
+        memberService = new MemberServiceV1(memberRepository);
     }
 
     @AfterEach
